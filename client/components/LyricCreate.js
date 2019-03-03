@@ -5,7 +5,9 @@ import {graphql} from 'react-apollo'
 class LyricCreate extends Component {
   constructor(props) {
     super(props)
-    this.state = {content: ''}
+    this.state = {
+      content: ''
+    }
   }
 
   onSubmit(event) {
