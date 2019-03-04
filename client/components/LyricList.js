@@ -18,17 +18,17 @@ class LyricList extends Component {
   }
 
   renderLyrics() {
-    return this.props.lyrics.map(({id, content, likes}) => {
+    return this.props.lyrics.map(({ id, content, likes }) => {
       return (
         <li key={id} className='collection-item'>
           {content}
           <div className='vote-box'>
-            <i onClick={() => this.onLike(id, likes)} className='material-icons'>thumb_up</i>
+            <i className='material-icons' onClick={() => this.onLike(id, likes)}>thumb_up</i>
             {likes}
           </div>
         </li>
-      )
-    })
+      );
+    });
   }
 
   render() {
@@ -39,8 +39,8 @@ class LyricList extends Component {
 }
 
 const mutation = gql`
-  mutation LyricLike($id: ID) {
-    lyricLike(id: $id) {
+  mutation LikeLyric($id: ID) {
+    likeLyric(id: $id) {
       id
       likes
     }
